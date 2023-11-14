@@ -29,23 +29,12 @@ class _splashState extends State<Splash> {
     final width=MediaQuery.sizeOf(context).height*1;
 
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Container(
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('images/splash_pic.jpg',
-            fit: BoxFit.cover,
-                width: width*.9,
-                height: height*.5),
-            SizedBox(height: height*0.04,),
-            Text('Top Headlines',style: GoogleFonts.anton(letterSpacing: .6,color: Colors.lightBlue),),
-            SizedBox(height:height*0.04),
-            SpinKitChasingDots(
-              color: Colors.blue,
-              size:40,
-            )
-          ],
-        ) ,
+        child:Center(
+          child: Text('Daily News',style:GoogleFonts.poppins(fontSize:30,fontWeight: FontWeight.w700,color: Colors.white,)),
+        )
+
       ),
     );
   }
