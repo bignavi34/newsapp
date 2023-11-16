@@ -4,6 +4,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:share/share.dart';
+
+///import 'package:share_plus/share_plus.dart';
+
+
 
 
 
@@ -53,8 +58,14 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
             },
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.white
-            )),
+              color: Colors.white)),
+       actions: [ IconButton(
+           icon: Icon(Icons.share),
+           onPressed: () {
+             Share.share('${widget.newsUrl}');
+           })
+
+        ],
 
       ),
       body: Stack(
@@ -131,6 +142,11 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                 SizedBox(
                   height: Kheight * 0.03,
                 ),
+                Text('${widget.newsContent}',
+                    style: GoogleFonts.poppins(
+                        fontSize: 15,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w500)),
                 // Text('${widget.newsContent}',
                 //     maxLines: 20,
                 //     style: GoogleFonts.poppins(
@@ -140,6 +156,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                 SizedBox(
                   height: Kheight * 0.03,
                 ),
+
               ],
             ),
           )
